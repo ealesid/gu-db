@@ -9,6 +9,10 @@ services:
       - .env
     ports:
       - "3008:3008"
+    volumes:
+      # On firts docker-compose run uncomment single line below to setup 'mysql' user
+      # - ./entrypoint:/docker-entrypoint-initdb.d
+      - ./cnf:/etc/mysql/conf.d
 
   admin:
     image: adminer
