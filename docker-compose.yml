@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3008:3008"
+    volumes:
+      - ./entrypoint:/docker-entrypoint-initdb.d
+      - ./cnf:/etc/mysql/conf.d
+
+  admin:
+    image: adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
