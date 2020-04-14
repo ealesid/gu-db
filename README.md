@@ -15,9 +15,12 @@
     docker-compose up --build
 
 ## 5. In browser go to `'localhost:8080'`.
-### And use next settings to connect to MySQL server:
+#### And use next settings to connect to MySQL server:
 
     server=db
     user=root
     password=<rootpassword>
     db=<dbname>
+
+## 6. To connect to `mysql` inside container run:
+    docker exec -it db_db_1 mysql -umysql -p
