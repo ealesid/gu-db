@@ -4,4 +4,7 @@
 .venv/
 .vscode/
 
+data/
+homeworks/
+
 .env
